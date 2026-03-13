@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .textPrimary {
+    @apply font-textPrimary font-semibold text-[14px] text-[#1F2937];
+  }
+
+  .textSecondary {
+    @apply font-textSecondary font-semibold text-[14px] text-[#9CA3AF];
+  }
+
+  .textCta {
+    @apply font-cta font-semibold text-[14px] text-[#F7D000];
+  }
+
+  .textHeading {
+    @apply font-bold text-logoText text-[14px] text-[#005AC7]
+}
+}
+
+.scroll-hide {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+
+div {
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+div::-webkit-scrollbar {
+  display: none;
+}
+
+/* Utility classes */
+.font-primary {
+  @apply font-semibold text-[14px] text-[#202020];
+}
+
+.font-secondary {
+  @apply font-semibold text-[14px] text-gray-500;
+}
+
+.input {
+  @apply border border-gray-300 rounded px-3 py-2 w-full textSecondary focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary;
+}
+
+input,
+textarea {
+  caret-color: #f5d000;
+}
+
+/* React Select Styles */
+.react-select__control {
+  @apply w-full h-11 text-sm textSecondary px-3 border border-textInactive rounded shadow-sm focus-within:ring-1 focus-within:ring-primary focus-within:border-primary;
+}
+
+.react-select__placeholder {
+  @apply textSecondary;
+}
+
+.react-select__menu {
+  @apply textSecondary;
+}
+
+.react-select__option:hover,
+.react-select__option--is-focused,
+.react-select__option--is-selected {
+  @apply bg-primary text-white;
+}
+
+.react-select__menu-portal {
+  @apply z-[9999];
+}
+
+
+/* Table Styles */
+
+.custom-table .p-datatable-thead > tr > th,
+.custom-table .p-datatable-tbody > tr > td {
+  padding: 0.7rem 0.5rem;
+}
+
+
+/* LoginPage Styles */
+
+.clip-u-shape {
+  clip-path: path('M 0 0 Q 0 60 60 100 L 60 500 Q 0 540 0 600 L 0 0 Z');
+}
+
+@media (min-width: 768px) {
+  .clip-u-shape {
+    clip-path: path('M 0 0 Q 0 100 100 150 L 100 550 Q 0 600 0 700 L 0 0 Z');
+  }
+}
+
+
+/* Spinner Styles */
+
+@keyframes glossyShine {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(25deg);
+  }
+}
+
+.shine-overlay::before {
+  content: '';
+  position: absolute;
+  top: 50;
+  left: -50%;
+  width: 200%;
+  height: 150%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 45%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.4) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: glossyShine 1.5s ease-in-out infinite;
+  filter: blur(2px);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
